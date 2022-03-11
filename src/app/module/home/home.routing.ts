@@ -1,0 +1,17 @@
+//core
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+//components
+import { HomeComponent } from 'src/app/Components/home/home.component';
+
+const routes: Routes = [
+    { path: '', redirectTo: '/dashboard/home', pathMatch: 'full' },
+    { path: '', children: [{ path: 'home', component: HomeComponent }] },
+];
+
+@NgModule({
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule],
+})
+export class HomeRoutingModule {}
